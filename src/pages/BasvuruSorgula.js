@@ -18,8 +18,7 @@ export default function BasvuruSorgula() {
         getApplication(values.applicationNumber).then((user) => {
           user.length === 0
             ? navigate("/basvuru/404")
-            : Number(user[0].applicationNumber) ===
-                Number(values.applicationNumber) &&
+            : user[0].applicationNumber == values.applicationNumber &&
               navigate(`/basvuru/${user[0].applicationNumber}`);
         });
       },

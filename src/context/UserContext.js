@@ -108,7 +108,7 @@ export const UserProvider = ({ children }) => {
     const base64 = await convertBase64(file);
 
     const imageSize =
-      base64.length * (3 / 4) - (base64[base64.length - 2] === "=" ? 2 : 1);
+      base64.length * (3 / 4) - (base64[base64.length - 2] == "=" ? 2 : 1);
 
     imageSize < FIVE_MB ? setBaseImage(base64) : setBaseImage("");
   };
