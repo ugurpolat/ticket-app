@@ -1,0 +1,38 @@
+.admin-page {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: 1px solid #999;
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  min-height: 20rem;
+}
+
+.application-list__box {
+  display: flex;
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 10%;
+}
+.flex-table__thead {
+  color: #fff;
+  background: #436cdf;
+}
+.flex-table thead tr,
+.flex-table tbody tr {
+  display: flex;
+}
+.flex-table tbody tr + tr {
+  border-top: 1px solid #ccc;
+}
+.flex-table thead tr th,
+.flex-table tbody tr td {
+  display: flex;
+  flex: 1;
+  padding: 0.5em;
+}
