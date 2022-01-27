@@ -26,7 +26,8 @@ export default function UsersList() {
                   <td>
                     <button
                       className="button button-small"
-                      onClick={() => navigate(`/admin/basvuru/${user.id}`)}>
+                      onClick={() => navigate(`/admin/basvuru/${user.id}`)}
+                    >
                       Show
                     </button>
                   </td>

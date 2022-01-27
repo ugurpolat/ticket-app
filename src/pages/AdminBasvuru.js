@@ -9,7 +9,7 @@ export default function AdminBasvuru() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const user = users.find((u) => u.id === id);
+  const user = users.find((u) => u.id == id);
 
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
@@ -174,8 +174,6 @@ export default function AdminBasvuru() {
 
         <div className="signup-form_row">
           <div className="signup-form_group">
-            {/* <label htmlFor="aplicationStatus">Application Status:</label>
-          <input name="aplicationStatus" onChange={handleChange} /> */}
             <label htmlFor="applicationStatus">Choose a status</label>
             <select
               name="applicationStatus"
