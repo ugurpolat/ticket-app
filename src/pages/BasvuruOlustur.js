@@ -59,7 +59,7 @@ export default function BasvuruOlustur() {
     <div>
       <section className="page">
         <form onSubmit={handleSubmit} className="signup-form">
-          <h2>Sign Up 2</h2>
+          <h2>Sign Up</h2>
           <div className="signup-form_row">
             <div className="signup-form_group">
               <label htmlFor="name">Name:</label>
