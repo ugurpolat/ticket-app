@@ -6,22 +6,20 @@ import validationSchema from "../components/validations/Validation_Admin";
 export default function Admin() {
   const navigate = useNavigate();
 
-  const { handleSubmit, handleChange, handleBlur, errors, touched } = useFormik(
-    {
-      initialValues: {
-        adminName: "",
-        password: "",
-      },
-      onSubmit: (values) => {
-        if (values.adminName === "kodluyoruz") {
-          if (values.password === "bootcamp109") {
-            navigate("/admin/basvuru-listesi");
-          }
+  const { handleSubmit, handleChange, handleBlur, errors, touched } = useFormik({
+    initialValues: {
+      adminName: "",
+      password: ""
+    },
+    onSubmit: (values) => {
+      if (values.adminName === "kodluyoruz") {
+        if (values.password === "bootcamp109") {
+          navigate("/admin/basvuru-listesi");
         }
-      },
-      validationSchema,
-    }
-  );
+      }
+    },
+    validationSchema
+  });
 
   return (
     <section className="page">
@@ -54,9 +52,7 @@ export default function Admin() {
               onChange={handleChange}
               className="signup-form_field"
             />
-            {errors.password && touched.password && (
-              <div className="error">{errors.password}</div>
-            )}
+            {errors.password && touched.password && <div className="error">{errors.password}</div>}
           </div>
         </div>
         <div className="signup-form_group">

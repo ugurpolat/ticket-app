@@ -7,23 +7,22 @@ export default function BasvuruSorgula() {
   const navigate = useNavigate();
   const { getApplication } = useContext(UserContext);
 
-  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
-    useFormik({
-      initialValues: {
-        applicationNumber: "",
-      },
-      onSubmit: (values) => {
-        // const inputValue = document.getElementById("search").value;
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
+    initialValues: {
+      applicationNumber: ""
+    },
+    onSubmit: (values) => {
+      // const inputValue = document.getElementById("search").value;
 
-        getApplication(values.applicationNumber).then((user) => {
-          user.length === 0
-            ? navigate("/basvuru/404")
-            : user[0].applicationNumber == values.applicationNumber &&
-              navigate(`/basvuru/${user[0].applicationNumber}`);
-        });
-      },
-      validationSchema,
-    });
+      getApplication(values.applicationNumber).then((user) => {
+        user.length === 0
+          ? navigate("/basvuru/404")
+          : user[0].applicationNumber == values.applicationNumber &&
+            navigate(`/basvuru/${user[0].applicationNumber}`);
+      });
+    },
+    validationSchema
+  });
 
   return (
     <section className="page">

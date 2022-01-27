@@ -9,18 +9,13 @@ export default function Navbar() {
     <footer className="navigation">
       <nav className="navigation_nav">
         <ul className="navigation_list">
-          <li
-            id="search"
-            className="navigation_item "
-            onClick={() => navigate("/")}
-          >
+          <li id="search" className="navigation_item " onClick={() => navigate("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="navigation_svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -31,17 +26,13 @@ export default function Navbar() {
 
             <p className="navigation_item_title">Create Ticket</p>
           </li>
-          <li
-            className="navigation_item"
-            onClick={() => navigate("/basvuru-sorgula")}
-          >
+          <li className="navigation_item" onClick={() => navigate("/basvuru-sorgula")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="navigation_svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -57,8 +48,7 @@ export default function Navbar() {
               className="navigation_svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

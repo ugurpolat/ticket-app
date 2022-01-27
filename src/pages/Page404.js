@@ -4,7 +4,7 @@ export default function Page404() {
   return (
     <section className="page">
       <div className="signup-form">
-        <h4>There is not any application:(</h4>
+        <h4>Aradığınız numarayla eşleşen bir başvuru gözükmüyor:(</h4>
       </div>
     </section>
   );

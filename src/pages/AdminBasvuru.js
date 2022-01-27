@@ -11,39 +11,38 @@ export default function AdminBasvuru() {
 
   const user = users.find((u) => u.id == id);
 
-  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
-    useFormik({
-      initialValues: {
-        name: `${user.name}`,
-        surname: `${user.surname}`,
-        age: `${user.age}`,
-        tc: `${user.tc}`,
-        reasonOfApp: `${user.reasonOfApp}`,
-        applicationStatus: `${user.applicationStatus}`,
-        applicationNumber: `${user.applicationNumber}`,
-        applicationDate: `${user.applicationDate}`,
-        address: `${user.address}`,
-        attach: `${user.attach}`,
-      },
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
+    initialValues: {
+      name: `${user.name}`,
+      surname: `${user.surname}`,
+      age: `${user.age}`,
+      tc: `${user.tc}`,
+      reasonOfApp: `${user.reasonOfApp}`,
+      applicationStatus: `${user.applicationStatus}`,
+      applicationNumber: `${user.applicationNumber}`,
+      applicationDate: `${user.applicationDate}`,
+      address: `${user.address}`,
+      attach: `${user.attach}`
+    },
 
-      onSubmit: (values) => {
-        const updUser = {
-          name: values.name,
-          surname: values.surname,
-          age: values.age,
-          tc: values.tc,
-          reasonOfApp: values.reasonOfApp,
-          applicationStatus: values.applicationStatus,
-          applicationNumber: values.applicationNumber,
-          applicationDate: values.applicationDate,
-          address: values.address,
-          attach: values.attach,
-        };
-        updateUser(id, updUser);
-        navigate("/admin/basvuru-listesi");
-      },
-      validationSchema,
-    });
+    onSubmit: (values) => {
+      const updUser = {
+        name: values.name,
+        surname: values.surname,
+        age: values.age,
+        tc: values.tc,
+        reasonOfApp: values.reasonOfApp,
+        applicationStatus: values.applicationStatus,
+        applicationNumber: values.applicationNumber,
+        applicationDate: values.applicationDate,
+        address: values.address,
+        attach: values.attach
+      };
+      updateUser(id, updUser);
+      navigate("/admin/basvuru-listesi");
+    },
+    validationSchema
+  });
 
   const handleDelete = () => {
     navigate("/admin/basvuru-listesi");
@@ -56,15 +55,8 @@ export default function AdminBasvuru() {
         <div className="signup-form_row">
           <div className="signup-form_group">
             <label htmlFor="name">Name:</label>
-            <input
-              name="name"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.name && touched.name && (
-              <div className="error">{errors.name}</div>
-            )}
+            <input name="name" value={values.name} onChange={handleChange} onBlur={handleBlur} />
+            {errors.name && touched.name && <div className="error">{errors.name}</div>}
           </div>
           <div className="signup-form_group">
             <label htmlFor="surname">Surname:</label>
@@ -74,9 +66,7 @@ export default function AdminBasvuru() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.surname && touched.surname && (
-              <div className="error">{errors.surname}</div>
-            )}
+            {errors.surname && touched.surname && <div className="error">{errors.surname}</div>}
           </div>
         </div>
 
@@ -89,36 +79,20 @@ export default function AdminBasvuru() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.address && touched.address && (
-              <div className="error">{errors.address}</div>
-            )}
+            {errors.address && touched.address && <div className="error">{errors.address}</div>}
           </div>
         </div>
 
         <div className="signup-form_row">
           <div className="signup-form_group">
             <label htmlFor="age">Age:</label>
-            <input
-              name="age"
-              value={values.age}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.age && touched.age && (
-              <div className="error">{errors.age}</div>
-            )}
+            <input name="age" value={values.age} onChange={handleChange} onBlur={handleBlur} />
+            {errors.age && touched.age && <div className="error">{errors.age}</div>}
           </div>
           <div className="signup-form_group">
             <label htmlFor="tc">TC:</label>
-            <input
-              name="tc"
-              value={values.tc}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.tc && touched.tc && (
-              <div className="error">{errors.tc}</div>
-            )}
+            <input name="tc" value={values.tc} onChange={handleChange} onBlur={handleBlur} />
+            {errors.tc && touched.tc && <div className="error">{errors.tc}</div>}
           </div>
         </div>
 
@@ -174,12 +148,13 @@ export default function AdminBasvuru() {
 
         <div className="signup-form_row">
           <div className="signup-form_group">
+            {/* <label htmlFor="aplicationStatus">Application Status:</label>
+          <input name="aplicationStatus" onChange={handleChange} /> */}
             <label htmlFor="applicationStatus">Choose a status</label>
             <select
               name="applicationStatus"
               value={values.applicationStatus}
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
               <option value="Çözüldü.">Çözüldü</option>
               <option value="İptal edildi.">İptal Edildi</option>
               <option value="Bekliyor.">Bekliyor</option>
@@ -197,8 +172,7 @@ export default function AdminBasvuru() {
             </button>
             <button
               className="button button-middle"
-              onClick={() => navigate("/admin/basvuru-listesi")}
-            >
+              onClick={() => navigate("/admin/basvuru-listesi")}>
               User List
             </button>
           </div>

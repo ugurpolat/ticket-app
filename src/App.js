@@ -28,10 +28,7 @@ function App() {
             <Route path="/basvuru-sorgula" element={<BasvuruSorgula />} />
             <Route path="/basvuru/:id" element={<Basvuru />} />
             <Route path="/admin" element={<Admin />} />
-            <Route
-              path="/admin/basvuru-listesi"
-              element={<AdminBasvuruList />}
-            />
+            <Route path="/admin/basvuru-listesi" element={<AdminBasvuruList />} />
             <Route path="/admin/basvuru/:id" element={<AdminBasvuru />} />
             <Route path="/basvuru/404" element={<Page404 />} />
           </Routes>
