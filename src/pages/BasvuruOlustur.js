@@ -15,39 +15,43 @@ export default function BasvuruOlustur() {
 
   localStorage.setItem("applicationNumber", JSON.stringify("0"));
 
-  const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
-    initialValues: {
-      name: "",
-      surname: "",
-      age: "",
-      tc: "",
-      reasonOfApp: "",
-      applicationStatus: "",
-      applicationNumber: "",
-      applicationDate: "",
-      address: "",
-      attach: ""
-    },
-    onSubmit: (values) => {
-      const newUser = {
-        name: values.name,
-        surname: values.surname,
-        age: values.age,
-        tc: values.tc,
-        reasonOfApp: values.reasonOfApp,
-        applicationStatus: "Bekliyor",
-        applicationNumber: randomNumber(Math.pow(10, 5), Math.pow(10, 8)),
-        applicationDate: registerDate,
-        address: values.address,
-        attach: baseImage
-      };
-      addUser(newUser);
-      baseImage !== "" && navigate("/basvuru-basarili");
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
+    useFormik({
+      initialValues: {
+        name: "",
+        surname: "",
+        age: "",
+        tc: "",
+        reasonOfApp: "",
+        applicationStatus: "",
+        applicationNumber: "",
+        applicationDate: "",
+        address: "",
+        attach: "",
+      },
+      onSubmit: (values) => {
+        const newUser = {
+          name: values.name,
+          surname: values.surname,
+          age: values.age,
+          tc: values.tc,
+          reasonOfApp: values.reasonOfApp,
+          applicationStatus: "Bekliyor",
+          applicationNumber: randomNumber(Math.pow(10, 5), Math.pow(10, 8)),
+          applicationDate: registerDate,
+          address: values.address,
+          attach: baseImage,
+        };
+        addUser(newUser);
+        baseImage !== "" && navigate("/basvuru-basarili");
 
-      localStorage.setItem("applicationNumber", JSON.stringify(newUser.applicationNumber));
-    },
-    validationSchema
-  });
+        localStorage.setItem(
+          "applicationNumber",
+          JSON.stringify(newUser.applicationNumber)
+        );
+      },
+      validationSchema,
+    });
 
   useEffect(() => {});
 
@@ -55,7 +59,7 @@ export default function BasvuruOlustur() {
     <div>
       <section className="page">
         <form onSubmit={handleSubmit} className="signup-form">
-          <h2>Sign Up</h2>
+          <h2>Sign Up 2</h2>
           <div className="signup-form_row">
             <div className="signup-form_group">
               <label htmlFor="name">Name:</label>
@@ -66,7 +70,9 @@ export default function BasvuruOlustur() {
                 value={values.name}
                 onBlur={handleBlur}
               />
-              {errors.name && touched.name && <div className="error">{errors.name}</div>}
+              {errors.name && touched.name && (
+                <div className="error">{errors.name}</div>
+              )}
             </div>
             <div className="signup-form_group">
               <label htmlFor="surname">Surname:</label>
@@ -77,7 +83,9 @@ export default function BasvuruOlustur() {
                 value={values.surname}
                 onBlur={handleBlur}
               />
-              {errors.surname && touched.surname && <div className="error">{errors.surname}</div>}
+              {errors.surname && touched.surname && (
+                <div className="error">{errors.surname}</div>
+              )}
             </div>
           </div>
 
@@ -91,7 +99,9 @@ export default function BasvuruOlustur() {
                 value={values.address}
                 onBlur={handleBlur}
               />
-              {errors.address && touched.address && <div className="error">{errors.address}</div>}
+              {errors.address && touched.address && (
+                <div className="error">{errors.address}</div>
+              )}
             </div>
           </div>
 
@@ -105,7 +115,9 @@ export default function BasvuruOlustur() {
                 value={values.age}
                 onBlur={handleBlur}
               />
-              {errors.age && touched.age && <div className="error">{errors.age}</div>}
+              {errors.age && touched.age && (
+                <div className="error">{errors.age}</div>
+              )}
             </div>
             <div className="signup-form_group">
               <label htmlFor="tc">TC:</label>
@@ -116,7 +128,9 @@ export default function BasvuruOlustur() {
                 value={values.tc}
                 onBlur={handleBlur}
               />
-              {errors.tc && touched.tc && <div className="error">{errors.tc}</div>}
+              {errors.tc && touched.tc && (
+                <div className="error">{errors.tc}</div>
+              )}
             </div>
           </div>
 
@@ -151,7 +165,9 @@ export default function BasvuruOlustur() {
               {baseImage !== "" ? (
                 <small className="attach-error"></small>
               ) : (
-                <small className="attach-error">Dosya boyutu 5MB altında olmalıdır</small>
+                <small className="attach-error">
+                  Dosya boyutu 5MB altında olmalıdır
+                </small>
               )}
             </div>
           </div>
